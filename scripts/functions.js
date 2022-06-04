@@ -4,15 +4,16 @@
 
 const items = ['rock', 'paper', 'scissors']
 
-function computerPlay() {
+ function computerPlay() {
     let item = items[Math.floor(Math.random() * 3)];
-    console.log(item);
+    return item;    
 }
 
-let computerSelection = computerPlay();
+const computerSelection = computerPlay();
+
 
 let player = prompt("What is your move? Rock, Paper or Scissors?");
-let playerSelection = player.toLowerCase();
+const playerSelection = player.toLowerCase();
 
 let result;
 
