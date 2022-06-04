@@ -14,22 +14,22 @@ function computerPlay() {
 
 function playRound(playerSelection, computerSelection) {
     
-    if (playerSelection = "rock", computerSelection = "Paper") {
+    if (playerSelection =="rock" && computerSelection == "Paper") {
         return ("You lose! Paper beats Rock")
     }
-    else if (playerSelection = "paper", computerSelection = "Rock") {
+    else if (playerSelection == "paper" && computerSelection == "Rock") {
         return ("You win! Paper beats Rock")
     }
-    else if (playerSelection = "rock", computerSelection = "Scissors") {
+    else if (playerSelection == "rock" && computerSelection == "Scissors") {
         return ("You win! Rock beats Scissors")
     }
-    else if (playerSelection = "scissors", computerSelection = "Rock") {
+    else if (playerSelection == "scissors" && computerSelection == "Rock") {
         return ("You lose! Rock beats Scissors")
     }
-    else if (playerSelection = "paper", computerSelection = "Scissors") {
+    else if (playerSelection == "paper" && computerSelection == "Scissors") {
         return ("You lose! Scissors beats Paper")
     }
-    else if (playerSelection = "scissors", computerSelection = "Paper") {
+    else if (playerSelection == "scissors"&& computerSelection == "Paper") {
         return ("You win! Scissors beats Paper")
     }
     else {
@@ -37,7 +37,7 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-let player = prompt("your move");
+let player = prompt("What is your move? Rock, Paper or Scissors?");
 const playerSelection = player.toLowerCase();
 
 const computerSelection = computerPlay();
