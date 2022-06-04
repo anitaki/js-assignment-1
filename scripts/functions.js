@@ -6,10 +6,13 @@ const items = ['rock', 'paper', 'scissors']
 
 function computerPlay() {
     let item = items[Math.floor(Math.random() * 3)];
-    console.log("Computer: " + item);
+    console.log(item);
 }
-// computerPlay()
 
+let computerSelection = computerPlay();
+
+let player = prompt("What is your move? Rock, Paper or Scissors?");
+let playerSelection = player.toLowerCase();
 
 let result;
 
@@ -30,23 +33,17 @@ function playRound(playerSelection, computerSelection) {
     else if (playerSelection == "paper" && computerSelection == "scissors") {
         return result = "You lose! Scissors beats Paper"
     }
-    else if (playerSelection == "scissors"&& computerSelection == "paper") {
+    else if (playerSelection == "scissors" && computerSelection == "paper") {
         return result = "You win! Scissors beats Paper"
     }
-    else if (playerSelection === computerSelection) {
-        return result = "It's a tie!"
-    }
-
     else {
-       return
+        return result = "It's a tie!"
     }
 }
 
-let player = prompt("What is your move? Rock, Paper or Scissors?");
-const playerSelection = player.toLowerCase();
 
-const computerSelection = computerPlay();
 console.log("Player: " + playerSelection)
+console.log("Computer: "+ computerSelection)
 
 playRound(playerSelection, computerSelection)
 console.log(result);
