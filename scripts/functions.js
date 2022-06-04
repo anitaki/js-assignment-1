@@ -33,12 +33,16 @@ function playRound(playerSelection, computerSelection) {
     else if (playerSelection == "scissors"&& computerSelection == "paper") {
         return result = "You win! Scissors beats Paper"
     }
-    else {
+    else if (playerSelection === computerSelection) {
         return result = "It's a tie!"
+    }
+
+    else {
+       return
     }
 }
 
-let player = prompt("What is your move? rock, paper or scissors?");
+let player = prompt("What is your move? Rock, Paper or Scissors?");
 const playerSelection = player.toLowerCase();
 
 const computerSelection = computerPlay();
