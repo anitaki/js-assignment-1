@@ -40,18 +40,15 @@ checker(8);
 const items = ['Rock', 'Paper', 'Scissors']
 
 function computerPlay() {
-    let item = items[Math.floor(Math.random() * items.length)];
+    let item = items[Math.floor(Math.random() * 3)];
     console.log("Computer: " + item);
 }
 // computerPlay()
 
 
-const playerSelection = "Paper";
 
-const computerSelection = computerPlay();
 function playRound(playerSelection, computerSelection) {
-   
-
+    
     if (playerSelection = "Rock", computerSelection = "Paper") {
         return ("You lose! Paper beats Rock")
     }
@@ -75,9 +72,14 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+const playerSelection = "Paper";
 
+const computerSelection = computerPlay();
 
 console.log("Player: " + playerSelection)
+
+
+
 playRound(playerSelection, computerSelection)
 
 console.log(playRound(playerSelection, computerSelection));
