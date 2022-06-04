@@ -42,13 +42,9 @@ let player = prompt("What is your move? Rock, Paper or Scissors?");
 const playerSelection = player.toLowerCase();
 
 const computerSelection = computerPlay();
-
 console.log("Player: " + playerSelection)
 
-
-
 playRound(playerSelection, computerSelection)
-
 console.log(result);
 
 
