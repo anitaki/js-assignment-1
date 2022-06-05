@@ -37,8 +37,12 @@ function playRound(playerSelection, computerSelection) {
     else if (playerSelection == "scissors" && computerSelection == "paper") {
         return result = "You win! Scissors beats Paper"
     }
-    else {
+
+    else if (playerSelection === computerSelection) {
         return result = "It's a tie!"
+    }
+    else {
+        let player = prompt("Not a valid selection. Please select: Rock, Paper or Scissors?");
     }
 }
 
