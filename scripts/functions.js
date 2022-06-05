@@ -9,11 +9,11 @@ const items = ['rock', 'paper', 'scissors']
     return item;    
 }
 
-const computerSelection = computerPlay();
+// const computerSelection = computerPlay();
 
 
-let player = prompt("What is your move? Rock, Paper or Scissors?");
-const playerSelection = player.toLowerCase();
+// let player = prompt("What is your move? Rock, Paper or Scissors?");
+// const playerSelection = player.toLowerCase();
 
 let result;
 
@@ -42,16 +42,26 @@ function playRound(playerSelection, computerSelection) {
         return result = "It's a tie!"
     }
     else {
-        let player = prompt("Not a valid selection. Please select: Rock, Paper or Scissors?");
+        return result = "Not a valid selection"
     }
 }
 
+function game() {
+    for (let i=0; i<5; i++) {
+        const computerSelection = computerPlay();
 
-console.log("Player: " + playerSelection)
-console.log("Computer: "+ computerSelection)
+        let player = prompt("What is your move? Rock, Paper or Scissors?");
+        const playerSelection = player.toLowerCase();
 
-playRound(playerSelection, computerSelection)
-console.log(result);
+        console.log("Player: " + playerSelection)
+        console.log("Computer: "+ computerSelection)
+        playRound(playerSelection, computerSelection)
+        console.log(result);
+    }
+}
+game();
+
+
 
 
 
