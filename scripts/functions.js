@@ -2,105 +2,82 @@
 
 // Assignment 4
 
-const items = ['rock', 'paper', 'scissors']
+const rock=document.querySelector("#rock").dataset.action
+const paper=document.querySelector("#paper").dataset.action
+const scissors=document.querySelector("#scissors").dataset.action
+const selection=document.querySelectorAll(".selection")
 
- function computerPlay() {
-    let item = items[Math.floor(Math.random() * 3)];
+const items = ['rock', 'paper', 'scissors']
+function computerPlay() {
+    let item = items[Math.floor(Math.random() * items.length)];
     return item;    
 }
 
-// const computerSelection = computerPlay();
-
-
-// let player = prompt("What is your move? Rock, Paper or Scissors?");
-// const playerSelection = player.toLowerCase();
+let playerRound;
+function playerPlay(number){
+      playerRound= items[number]
+      console.log(playerRound)
+      return playerRound      
+}
 
 let result;
-
 function playRound(playerSelection, computerSelection) {
     
     if (playerSelection =="rock" && computerSelection == "paper") {
-        return result = "You lose! Paper beats Rock"
+        console.log("You lose! Paper beats Rock")
+        return result = -1
     }
     else if (playerSelection == "paper" && computerSelection == "rock") {
-        return result = "You win! Paper beats Rock"
+        console.log("You win! Paper beats Rock")
+        return result = 1
     }
     else if (playerSelection == "rock" && computerSelection == "scissors") {
-        return result = "You win! Rock beats Scissors"
+        console.log("You win! Rock beats Scissors")
+        return result = 1
     }
     else if (playerSelection == "scissors" && computerSelection == "rock") {
-        return result = "You lose! Rock beats Scissors"
+        console.log("You lose! Rock beats Scissors")
+        return result = -1
     }
     else if (playerSelection == "paper" && computerSelection == "scissors") {
-        return result = "You lose! Scissors beats Paper"
+        console.log("You lose! Scissors beats Paper")
+        return result = -1
     }
     else if (playerSelection == "scissors" && computerSelection == "paper") {
-        return result = "You win! Scissors beats Paper"
+        console.log("You win! Scissors beats Paper")
+        return result = 1
     }
-
     else if (playerSelection === computerSelection) {
         return result = "It's a tie!"
     }
+
     else {
         return result = "Not a valid selection"
     }
 }
 
-function game() {
-    for (let i=0; i<5; i++) {
-        const computerSelection = computerPlay();
-
-        let player = prompt("What is your move? Rock, Paper or Scissors?");
-        const playerSelection = player.toLowerCase();
-
-        console.log("Player: " + playerSelection)
-        console.log("Computer: "+ computerSelection)
-        playRound(playerSelection, computerSelection)
-        console.log(result);
-    }
+function game(){
+    const computerSelection = computerPlay();
+    const playerSelection = playerRound
+    console.log("Player: " + playerSelection)
+    console.log("Computer: "+ computerSelection)
+    playRound(playerSelection, computerSelection)
+    console.log(result);
 }
+
 game();
 
+// function game() {
+//     for (let i=0; i<5; i++) {
+//         const computerSelection = computerPlay();
 
+//         // let player = prompt("What is your move? Rock, Paper or Scissors?");
+//         const playerSelection = player.toLowerCase();
 
-
-
-
-
-
-
-// switch (playerSelection, computerSelection) {
-//     case 0:
-//         playerSelection = "Rock"
-//         computerSelection = "Paper"
-//        return "You lose! Paper beats Rock"
-//         break;
-//     case 1:
-//         playerSelection = "Paper"
-//         computerSelection = "Rock"
-//         return "You win! Paper beats Rock"
-//         break;
-//     case 2:
-//         playerSelection = "Rock"
-//         computerSelection = "Scissors"
-
-//         return ("You win! Rock beats Scissors")
-//         break;
-//     case 3:
-//         playerSelection = "Scissors"
-//         computerSelection = "Rock"
-
-//         return ("You lose! Rock beats Scissors")
-//         break;
-//     case 4:
-//         playerSelection = "Paper"
-//         computerSelection = "Scissors"
-
-//         return ("You lose! Scissors beats Paper")
-//         break;
-//     case 5:
-//         playerSelection = "Scissors"
-//         computerSelection = "Paper"
-//         return ("You win! Scissors beats Paper")
+//         console.log("Player: " + playerSelection)
+//         console.log("Computer: "+ computerSelection)
+//         playRound(playerSelection, computerSelection)
+//         console.log(result);
+//     }
 // }
-
+// game();

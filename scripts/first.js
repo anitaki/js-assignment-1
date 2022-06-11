@@ -16,9 +16,15 @@ console.log(heron);
 //3. the circumference and surface area of a circle whose radius is 4.
 
 
+<<<<<<< HEAD
 let circumference = 2 * Math.PI * 4;
 console.log(circumference);
 let surfaceArea = Math.PI * 4 ** 2;
+=======
+let circumference = 2 * math.pi * 4;
+console.log(circumference);
+let surfaceArea = math.PI * 4 ** 2;
+>>>>>>> score-and-turns
 console.log(surfaceArea);
 
 // Assignment 3
