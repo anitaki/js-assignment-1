@@ -58,6 +58,20 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+let playerScore=0
+let computerScore=0
+let finalScore = playerScore+computerScore
+  
+function score(result){
+ result === 1 ? playerScore+=1 : // if 
+ result === -1 ? computerScore+=1 : // else if 
+null // else 
+return playerScore;
+return computerScore;
+}
+
+
+
 function game(){
     const computerSelection = computerPlay();
     const playerSelection = playerRound
@@ -65,10 +79,17 @@ function game(){
     ppText.innerHTML = "Player: "+ playerSelection
     let pcText = document.getElementById("computer")
     pcText.innerHTML = "Computer: "+ computerSelection
+    
     playRound(playerSelection, computerSelection)
+    score(result)
+
     let pwText = document.getElementById("winner")
     pwText.innerHTML = winnerRound
+    let ppsText = document.getElementById("player-score")
+    ppsText.innerHTML = "Your score is " + playerScore + " and the computer's score is " + computerScore
+
     console.log(winnerRound);
+    console.log(playerScore, computerScore)
 }
 
 game();
