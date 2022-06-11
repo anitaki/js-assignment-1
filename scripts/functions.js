@@ -91,7 +91,7 @@ function game() {
 pwText.innerHTML = winnerRoundText
 
 
-ppsText.innerHTML = "Your score is " + playerScore + " and the computer's score is " + computerScore
+ppsText.innerHTML = `Your score is <span class="score">${playerScore}</span> and the computer's score is <span class="score">${computerScore}</span>`
 
     function endGame(playerScore, computerScore) {
         if (playerScore === 5) {
