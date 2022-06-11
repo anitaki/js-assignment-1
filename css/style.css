@@ -9,6 +9,7 @@ body {
    display: flex;
    flex-direction: column;
    font-family: Verdana, Geneva, Tahoma, sans-serif;
+   background-color: rgba(108, 129, 2, 0.349);
 }
 
 /* game controls */
