@@ -49,7 +49,8 @@ function playRound(playerSelection, computerSelection) {
         return result = 1
     }
     else if (playerSelection === computerSelection) {
-        return result = "It's a tie!"
+        winnerRound = "It's a tie!"
+        return result = 0
     }
 
     else {
@@ -71,6 +72,15 @@ function game(){
 }
 
 game();
+
+
+
+
+
+
+
+
+
 
 // function game() {
 //     for (let i=0; i<5; i++) {
