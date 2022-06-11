@@ -96,12 +96,21 @@ ppsText.innerHTML = `Your score is <span class="score">${playerScore}</span> and
     function endGame(playerScore, computerScore) {
         if (playerScore === 5) {
             pgoText.innerHTML = "YOU WIN!"
+            document.getElementById("rock").disabled = true;
+            document.getElementById("paper").disabled = true;
+            document.getElementById("scissors").disabled = true;
         }
         else if (computerScore === 5) {
             pgoText.innerHTML = "GAME OVER! YOU LOSE"
+            document.getElementById("rock").disabled = true;
+            document.getElementById("paper").disabled = true;
+            document.getElementById("scissors").disabled = true;
+
+
+
         }
         else if (playerScore>5||computerScore>5){
-            newGame()
+            // newGame()
         }
         else {
         }
@@ -121,6 +130,9 @@ function newGame() {
     playerScore=0
     computerScore=0
     result=0 
+    document.getElementById("rock").disabled = false;
+    document.getElementById("paper").disabled = false;
+    document.getElementById("scissors").disabled = false;
     return
 }
 
