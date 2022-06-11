@@ -2,17 +2,25 @@
 
 // Assignment 4
 
-const items = ['rock', 'paper', 'scissors']
+const rock=document.querySelector("#rock").dataset.action
+const paper=document.querySelector("#paper").dataset.action
+const scissors=document.querySelector("#scissors").dataset.action
+const selection=document.querySelectorAll(".selection")
 
- function computerPlay() {
-    let item = items[Math.floor(Math.random() * 3)];
+const items = ['rock', 'paper', 'scissors']
+function computerPlay() {
+    let item = items[Math.floor(Math.random() * items.length)];
     return item;    
 }
 
-
+let playerRound;
+function playerPlay(number){
+      playerRound= items[number]
+      console.log(playerRound)
+      return playerRound      
+}
 
 let result;
-
 function playRound(playerSelection, computerSelection) {
     
     if (playerSelection =="rock" && computerSelection == "paper") {
@@ -48,17 +56,28 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game() {
-    for (let i=0; i<5; i++) {
-        const computerSelection = computerPlay();
-
-        let player = prompt("What is your move? Rock, Paper or Scissors?");
-        const playerSelection = player.toLowerCase();
-
-        console.log("Player: " + playerSelection)
-        console.log("Computer: "+ computerSelection)
-        playRound(playerSelection, computerSelection)
-        console.log(result);
-    }
+function game(){
+    const computerSelection = computerPlay();
+    const playerSelection = playerRound
+    console.log("Player: " + playerSelection)
+    console.log("Computer: "+ computerSelection)
+    playRound(playerSelection, computerSelection)
+    console.log(result);
 }
+
 game();
+
+// function game() {
+//     for (let i=0; i<5; i++) {
+//         const computerSelection = computerPlay();
+
+//         // let player = prompt("What is your move? Rock, Paper or Scissors?");
+//         const playerSelection = player.toLowerCase();
+
+//         console.log("Player: " + playerSelection)
+//         console.log("Computer: "+ computerSelection)
+//         playRound(playerSelection, computerSelection)
+//         console.log(result);
+//     }
+// }
+// game();
