@@ -21,30 +21,31 @@ function playerPlay(number){
 }
 
 let result;
+let winnerRound;
 function playRound(playerSelection, computerSelection) {
     
     if (playerSelection =="rock" && computerSelection == "paper") {
-        console.log("You lose! Paper beats Rock")
+        winnerRound = "You lose! Paper beats Rock"
         return result = -1
     }
     else if (playerSelection == "paper" && computerSelection == "rock") {
-        console.log("You win! Paper beats Rock")
+        winnerRound = "You win! Paper beats Rock"
         return result = 1
     }
     else if (playerSelection == "rock" && computerSelection == "scissors") {
-        console.log("You win! Rock beats Scissors")
+        winnerRound = "You win! Rock beats Scissors"
         return result = 1
     }
     else if (playerSelection == "scissors" && computerSelection == "rock") {
-        console.log("You lose! Rock beats Scissors")
+        winnerRound = "You lose! Rock beats Scissors"
         return result = -1
     }
     else if (playerSelection == "paper" && computerSelection == "scissors") {
-        console.log("You lose! Scissors beats Paper")
+        winnerRound = "You lose! Scissors beats Paper"
         return result = -1
     }
     else if (playerSelection == "scissors" && computerSelection == "paper") {
-        console.log("You win! Scissors beats Paper")
+        winnerRound = "You win! Scissors beats Paper"
         return result = 1
     }
     else if (playerSelection === computerSelection) {
@@ -59,10 +60,14 @@ function playRound(playerSelection, computerSelection) {
 function game(){
     const computerSelection = computerPlay();
     const playerSelection = playerRound
-    console.log("Player: " + playerSelection)
-    console.log("Computer: "+ computerSelection)
+    let ppText = document.getElementById("player")
+    ppText.innerHTML = "Player: "+ playerSelection
+    let pcText = document.getElementById("computer")
+    pcText.innerHTML = "Computer: "+ computerSelection
     playRound(playerSelection, computerSelection)
-    console.log(result);
+    let pwText = document.getElementById("winner")
+    pwText.innerHTML = winnerRound
+    console.log(winnerRound);
 }
 
 game();
